@@ -4,20 +4,23 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        int num, suma = 0;
-
-        
-          do  {
-            Console.WriteLine("Ingresa un numero");
-
-            num = int.Parse(Console.ReadLine());
-                suma = suma + num;
-        } while (num != 0) ;
-
+        int i, j;
+        for (i = 1; i <= 5; i++)
         {
-            Console.WriteLine("Tu suma es: " + suma);
-            
+            for (j = 1; j <= i; j++)
+            {
+                for (i = 4; i <= 1; i--)
+                {
+                    for (j = 4; j <= i; j++)
+                    {
+                        Console.Write("*");
+                        Console.WriteLine();
+                    }
+                }
+            }
         }
     }
 }
-        
+
+
+
