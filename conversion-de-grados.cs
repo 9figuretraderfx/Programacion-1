@@ -1,68 +1,29 @@
 ﻿using System;
-
-public class Unit
+class Program
 {
-    static void Celcius(double grados)
+    public static void Main(String[] args)
     {
-        double resultado = (grados - 32) / 1.8;
-        Console.WriteLine($"La conversion de Fahrenheit a Celsius es: {resultado}");
+        int opcion;
+        double temp; double tempConv;
+        Console.WriteLine("--- MENU ---");
+        Console.WriteLine("[1] F a C");
+        Console.WriteLine("[2] C a F");
+        Console.WriteLine("Ingrese una opcion: ");
 
-    }
-    static void Fahrenheit(double grados)
-    {
-        double resultado = (grados * 1.8) + 32;
-        Console.WriteLine($"La conversion de Celcius a Fahrenheit es: {resultado}");
-    }
-    public static void Main(string[] args)
-    {
+        opcion = int.Parse(Console.ReadLine());
 
-        Console.Clear();
-        Console.WriteLine("------Convertidor------\n");
-        Console.WriteLine("Ingresa la conversion que deseas realizar");
-        Console.WriteLine("1. Celcius a Farenheit");
-        Console.WriteLine("2. Farenheit a Celcius");
-
-        int selec = int.Parse(Console.ReadLine()!);
-        Console.Clear();
-
-        Console.WriteLine("Ingresa los grados");
-        double resultado = double.Parse(Console.ReadLine()!);
-        
-
-
-
-        switch (selec)
-        {
-            case 1:
-                Celcius(resultado);
-                break;
-            case 2:
-                Fahrenheit(resultado);
-                break;
-            default:
-                Console.WriteLine("Instruccion no existe. Eliga una opcion valida del menu");
-                break;
+        if (opcion == 1) {
+            Console.WriteLine("Ingrese la temperatura");
+            temp = double.Parse(Console.ReadLine());
+            tempConv = (temp - 32) / 1.8;
+            Console.WriteLine("La onvesion de F a C es: " + tempConv);
+        } else if (opcion == 2) {
+            Console.WriteLine("Ingresa la temperatura: ");
+            temp = double.Parse(Console.ReadLine());
+            tempConv = (temp * 1.8) + 32;
+            Console.WriteLine("La conversion de C a A es: " + tempConv);
         }
-
-        Console.WriteLine("Presione cualquier tecla para continuar");
-        Console.WriteLine("Presione la tecla ESC para salir...");
-
-
-
-        
-        
+        else
+            Console.WriteLine("Opcion invalida");
     }
 }
-   
-
-
-   
-        
-
-
-
-
-        
-
-
-    
